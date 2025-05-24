@@ -1040,34 +1040,34 @@ footer .footer-text {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  /* ─────────────────────────────
+     Contact Form Two-Column Layout
+  ───────────────────────────── */
   .contact-form {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two-column layout */
-    gap: 1rem; /* Add spacing between columns */
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1rem;                      /* Spacing between fields */
   }
 
-  .form-group {
-    margin-bottom: 1rem; /* Add spacing between form fields */
+  /* All form groups default to one column */
+  .contact-form .form-group {
+    grid-column: span 1;
+    margin-bottom: 1rem;
   }
 
-  .form-group:nth-child(1), /* Name */
-  .form-group:nth-child(2) { /* Email */
-    grid-column: span 1; /* Each takes one column */
+  /* Subject (3rd .form-group) and Message (4th .form-group) span both columns */
+  .contact-form .form-group:nth-of-type(3),
+  .contact-form .form-group:nth-of-type(4) {
+    grid-column: span 2;
   }
 
-  .form-group:nth-child(3) { /* Subject */
-    grid-column: span 2; /* Subject spans both columns */
-  }
-
-  .form-group:nth-child(4) { /* Message */
-    grid-column: span 2; /* Message spans both columns */
-  }
-
-  button[type="submit"] {
-    grid-column: span 2; /* Button spans both columns */
-    justify-self: end; /* Align the button to the right */
+  /* Submit button spans both columns and aligns right */
+  .contact-form button[type="submit"] {
+    grid-column: span 2;
+    justify-self: end;
   }
 }
+
 
 @media (min-width: 1200px) {
   nav {

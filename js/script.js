@@ -346,16 +346,31 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Contact Form AJAX Submission (Formspree integration)
 window.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function(event) {
-      event.preventDefault();  // prevent normal form post
+      event.preventDefault(); // prevent default submit
 
       const formData = new FormData(this);
 
-      // PRIVATE: your unique Formspree endpoint – keep this URL secret
+      // Basic validation (skip honeypot field)
+      for (let [key, value] of formData.entries()) {
+        if (key === '_gotcha') continue;
+        if (!value.trim()) {
+          alert(`Please fill out the ${key} field.`);
+          return;
+        }
+      }
+
+      // Check if reCAPTCHA is completed
+      const recaptchaResponse = formData.get('g-recaptcha-response');
+      if (!recaptchaResponse) {
+        alert('Please complete the reCAPTCHA.');
+        return;
+      }
+
+      // Submit form via AJAX to Formspree
       fetch('https://formspree.io/f/mzzdvvob', {
         method: 'POST',
         body: formData,
@@ -365,13 +380,11 @@ window.addEventListener('DOMContentLoaded', () => {
       })
       .then(response => {
         if (response.ok) {
-          // PRIVATE: redirect URL after successful submit – keep this secret
           window.location.href = 'https://anubhab521.github.io/Creative-Portfolio/thank-you.html';
         } else {
           return response.json().then(data => {
-            // PUBLIC: show any validation errors returned by Formspree
             if (data.errors) {
-              alert('Error: ' + data.errors.map(e => e.message).join(', '));
+              alert(`Error: ${data.errors.map(e => e.message).join(', ')}`);
             } else {
               alert('There was an error sending your message. Please try again later.');
             }
@@ -385,4 +398,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+
 
