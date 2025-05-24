@@ -282,7 +282,7 @@ nav {
 #video-motion-graphics-section,
 #video-music-videos-section,
 #video-short-films-section,
-#video-social-media-content-section,
+#social-media-section,
 #video-youtube-content-section {
   text-align: center;
   padding: 2rem 1rem;
@@ -295,7 +295,7 @@ nav {
 #video-motion-graphics-content h1,
 #video-music-videos-content h1,
 #video-short-films-content h1,
-#video-social-media-content h1,
+#social-media h1,
 #video-youtube-content h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
