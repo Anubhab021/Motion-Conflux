@@ -380,7 +380,7 @@ window.addEventListener('DOMContentLoaded', () => {
       })
       .then(response => {
         if (response.ok) {
-          window.location.href = 'https://anubhab521.github.io/Creative-Portfolio/thank-you.html';
+          window.location.href = 'https://anubhab521.github.io/Motion-Conflux/thank-you.html';
         } else {
           return response.json().then(data => {
             if (data.errors) {
