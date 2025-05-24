@@ -371,7 +371,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       // Submit form via AJAX to Formspree
-      fetch('https://formspree.io/f/mzzdvvob', {
+      fetch('https://formspree.io/f/movdovqe', {
         method: 'POST',
         body: formData,
         headers: {
