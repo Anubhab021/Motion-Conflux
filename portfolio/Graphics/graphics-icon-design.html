@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compositing</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/Graphics.css" />
+
+    <!-- Scripts -->
+    <script src="../../js/script.js" defer></script>
+    <script src="../../js/Graphics.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="nav-left">
+            <a href="../../index.html" class="nav-logo">
+              <span class="logo-anubhab">Anubhab</span>
+              <span class="logo-jana">Jana</span>
+            </a>
+          </div>
+          <div class="nav-right">
+            <a href="../../index.html#home" class="nav-link">Home</a>
+            <a href="../../index.html#about" class="nav-link">About</a>
+            <a href="../../index.html#skills" class="nav-link">Skills</a>
+            <a href="../../index.html#portfolio" class="nav-link">Portfolio</a>
+            <a href="../../index.html#contact" class="nav-link">Contact</a>
+            <button id="search-icon" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
+            <input type="checkbox" id="theme-toggle-desktop" class="sr-only" />
+            <label for="theme-toggle-desktop" class="toggle-switch"></label>
+            <span id="theme-text-desktop">Dark Mode</span>
+          </div>
+          <div class="hamburger-menu" id="hamburger-menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </div>
+        </nav>
+      </div>
+      <div class="hamburger-popup" id="hamburger-popup">
+        <div class="hamburger-popup-content">
+          <div class="hamburger-search">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              placeholder="Search..."
+              id="hamburger-search-input"
+            />
+          </div>
+          <a href="../../index.html#home" class="nav-link">Home</a>
+          <a href="../../index.html#about" class="nav-link">About</a>
+          <a href="../../index.html#skills" class="nav-link">Skills</a>
+          <a href="../../index.html#portfolio" class="nav-link">Portfolio</a>
+          <a href="../../index.html#contact" class="nav-link">Contact</a>
+          <div class="hamburger-theme-toggle">
+            <input type="checkbox" id="theme-toggle-mobile" class="sr-only" />
+            <label for="theme-toggle-mobile" class="toggle-switch"></label>
+            <span id="theme-text-mobile">Dark Mode</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Icon Design Section -->
+    <main id="graphics-icon-design-section">
+      <div id="graphics-icon-design-content">
+        <h1>Icon Design</h1>
+        <div class="Graphics-grid">
+          <!-- Icon Design 1 -->
+          <div class="Graphics-item">
+            <img
+              src="../../assets/graphics/Poster/1.jpg"
+              alt="Icon Design 1"
+              class="Graphics-image"
+            />
+            <h2>Icon Design Project 1</h2>
+            <p>
+              Description for Icon Design Project 1. This can be updated later.
+            </p>
+          </div>
+
+          <!-- Icon Design 2 -->
+          <div class="Graphics-item">
+            <img
+              src="../../assets/graphics/Poster/1.jpg"
+              alt="Icon Design 2"
+              class="Graphics-image"
+            />
+            <h2>Icon Design Project 2</h2>
+            <p>
+              Description for Icon Design Project 2. This can be updated later.
+            </p>
+          </div>
+          <div class="Graphics-item">
+            <img
+              src="../../assets/graphics/Poster/1.jpg"
+              alt="Icon Design 2"
+              class="Graphics-image"
+            />
+            <h2>Icon Design Project 3</h2>
+            <p>
+              Description for Icon Design Project 3. This can be updated later.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Lightbox Modal (no caption) -->
+    <div id="lightbox-modal" class="lightbox-modal">
+      <span class="lightbox-close">&times;</span>
+      <img
+        class="lightbox-content"
+        id="lightbox-img"
+        src=""
+        alt="Expanded view"
+      />
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+      <button onclick="window.history.back()">Back</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-about">
+            <h3>Anubhab Jana</h3>
+            <p>
+              Creating memorable digital experiences through innovative design,
+              animation, and development.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.youtube.com/" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://www.instagram.com/" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://www.behance.net/" aria-label="Behance"
+                ><i class="fab fa-behance"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>Sections</h3>
+            <ul>
+              <li><a href="../../index.html#home">Home</a></li>
+              <li><a href="../../index.html#about">About</a></li>
+              <li><a href="../../index.html#skills">Skills</a></li>
+              <li><a href="../../index.html#portfolio">Portfolio</a></li>
+              <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i
+                ><span>123 Creative Way, Design City, 12345</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i
+                ><a href="mailto:contact@example.com">contact@example.com</a>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i
+                ><a href="tel:+1234567890">(123) 456-7890</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Anubhab Jana. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

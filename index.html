@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anubhab Jana - Creative Portfolio</title>
+    <!-- Meta description for SEO -->
+    <meta
+      name="description"
+      content="Anubhab Jana is a multimedia artist and developer specializing in Graphics, VFX, 3D Animation, Video Editing, and Web Development."
+    />
+    <!-- Google Fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Main JS (handles theme, nav, portfolio modals) -->
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <div class="container">
+        <nav>
+          <!-- Logo -->
+          <div class="nav-left">
+            <a href="#" class="nav-logo">
+              <span class="logo-anubhab">Anubhab</span>
+              <span class="logo-jana">Jana</span>
+            </a>
+          </div>
+
+          <!-- Desktop Links + Search + Theme Toggle -->
+          <div class="nav-right">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <!-- Search button triggers JS to open popup -->
+            <button id="search-icon" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
+            <!-- Theme toggle checkbox + visual switch -->
+            <input type="checkbox" id="theme-toggle-desktop" class="sr-only" />
+            <label for="theme-toggle-desktop" class="toggle-switch"></label>
+            <span id="theme-text-desktop">Dark Mode</span>
+          </div>
+
+          <!-- Mobile hamburger button toggles nav popup -->
+          <div class="hamburger-menu" id="hamburger-menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Mobile Navigation Popup -->
+      <div class="hamburger-popup" id="hamburger-popup">
+        <div class="hamburger-popup-content">
+          <!-- Mobile Search Input (JS can handle enter key) -->
+          <div class="hamburger-search">
+            <input
+              type="text"
+              placeholder="Search..."
+              id="hamburger-search-input"
+            />
+          </div>
+          <!-- Mobile nav links -->
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <!-- Theme toggle for mobile -->
+          <div class="hamburger-theme-toggle">
+            <input type="checkbox" id="theme-toggle-mobile" class="sr-only" />
+            <label for="theme-toggle-mobile" class="toggle-switch"></label>
+            <span id="theme-text-mobile">Dark Mode</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Desktop Search Popup (hidden by default) -->
+    <div id="search-popup" class="search-popup">
+      <div class="search-popup-content">
+        <input type="text" placeholder="Search..." id="popup-search-input" />
+        <button id="popup-search-button">Search</button>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="hero"
+        style="background-image: url('assets/home-bg/hero-bg.png')"
+      >
+        <div class="container">
+          <div class="hero-content">
+            <h1
+              class="fade-in"
+              style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem"
+            >
+              Anubhab Jana
+            </h1>
+            <h2
+              class="fade-in"
+              style="
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                opacity: 0.9;
+                animation-delay: 0.2s;
+              "
+            >
+              Multimedia Artist & Developer
+            </h2>
+            <p
+              class="fade-in"
+              style="
+                font-size: 1.25rem;
+                max-width: 800px;
+                margin: 0 auto 2.5rem;
+                opacity: 0.8;
+                animation-delay: 0.4s;
+              "
+            >
+              Specializing in Graphics, VFX, 3D Animation, Video Editing, and
+              Web Development
+            </p>
+            <a
+              href="#portfolio"
+              class="btn btn-primary scale-in"
+              style="animation-delay: 0.6s"
+              >View My Work</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <div class="container">
+          <h2 class="section-title fade-in">About Me</h2>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 2rem;
+              max-width: 1000px;
+              margin: 0 auto;
+            "
+          >
+            <div
+              class="fade-in"
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                align-items: center;
+              "
+            >
+              <div style="flex: 1 1 300px">
+                <div style="position: relative">
+                  <div
+                    style="
+                      position: absolute;
+                      top: 15px;
+                      right: -15px;
+                      bottom: -15px;
+                      left: 15px;
+                      border: 3px solid var(--accent-color);
+                      border-radius: 0.5rem;
+                    "
+                  ></div>
+                  <img
+                    src="assets/about-me-bg/profile.png"
+                    alt="Anubhab Jana"
+                    style="
+                      width: 100%;
+                      border-radius: 0.5rem;
+                      position: relative;
+                      z-index: 1;
+                    "
+                  />
+                </div>
+              </div>
+
+              <div style="flex: 1 1 400px">
+                <h3
+                  style="
+                    font-size: 1.75rem;
+                    margin-bottom: 1rem;
+                    color: var(--primary-color);
+                  "
+                >
+                  Hello, I'm Anubhab Jana
+                </h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7">
+                  I'm a multidisciplinary creative professional with a passion
+                  for animation, graphics, video production, and web
+                  development. My goal is to create memorable digital
+                  experiences that communicate effectively and engage audiences.
+                </p>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7">
+                  With expertise across 2D/3D animation, graphic design, video
+                  production, and web development, I bring a holistic approach
+                  to every project. I believe that great design is not just
+                  about aesthetics, but also about solving problems and creating
+                  meaningful connections.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem">
+                  <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                  <a
+                    href="#"
+                    class="btn"
+                    style="
+                      background-color: transparent;
+                      border: 2px solid var(--text-color);
+                      color: var(--text-color);
+                    "
+                    >Download Resume</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills & Tools Section -->
+      <section id="skills">
+        <!-- Outer wrapper stays full-width with page bg -->
+        <div class="skills-card">
+          <h2>Skills &amp; Tools</h2>
+          <p>
+            Over the years, I have gained proficiency in a variety of software
+            and tools. Here's a visual representation of my expertise:
+          </p>
+          <div class="skills-container">
+            <div class="skill">
+              <canvas id="photoshopCanvas" width="150" height="150"></canvas>
+              <h3>Photoshop</h3>
+            </div>
+            <div class="skill">
+              <canvas id="premiereCanvas" width="150" height="150"></canvas>
+              <h3>Premiere Pro</h3>
+            </div>
+            <div class="skill">
+              <canvas id="blenderCanvas" width="150" height="150"></canvas>
+              <h3>Blender</h3>
+            </div>
+            <div class="skill">
+              <canvas id="afterEffectsCanvas" width="150" height="150"></canvas>
+              <h3>After Effects</h3>
+            </div>
+            <div class="skill">
+              <canvas id="htmlCssCanvas" width="150" height="150"></canvas>
+              <h3>HTML &amp; CSS</h3>
+            </div>
+            <div class="skill">
+              <canvas id="javascriptCanvas" width="150" height="150"></canvas>
+              <h3>JavaScript</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section
+        id="portfolio"
+        class="portfolio"
+        style="background-color: var(--bg-alt-color)"
+      >
+        <div class="container">
+          <h2 class="section-title fade-in">My Portfolio</h2>
+
+          <div class="portfolio-grid">
+            <!-- Portfolio Item 1 - 2D Animation -->
+            <div
+              class="portfolio-item scale-in"
+              data-category="2D Animation"
+              data-subcategories="portfolio/big_animation/b-animation.html,portfolio/big_animation/character-animation.html,portfolio/big_animation/motion-graphics.html,portfolio/big_animation/small-animation.html,portfolio/big_animation/stop-motion.html,portfolio/big_animation/visual-effects.html"
+              data-names="2D Animation,Character Animation,Motion Graphics,Small Animation,Stop Motion,Visual Effects Animation"
+              style="animation-delay: 0.1s"
+            >
+              <div
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  border-radius: 0.5rem;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="assets/2D/sample-2.png"
+                  alt="2D Animation Project"
+                  loading="lazy"
+                  style="
+                    width: 100%;
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.3s ease;
+                  "
+                />
+                <div
+                  style="
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 0%,
+                      rgba(0, 0, 0, 0) 100%
+                    );
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 1.5rem;
+                  "
+                >
+                  <h3
+                    style="
+                      color: white;
+                      font-size: 1.25rem;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    2D Animation
+                  </h3>
+                  <p
+                    style="color: rgba(255, 255, 255, 0.8); font-size: 0.875rem"
+                  >
+                    Animation
+                  </p>
+                  <button
+                    class="view-project-btn"
+                    style="
+                      background-color: var(--primary-color);
+                      color: white;
+                      border: none;
+                      padding: 0.5rem 1rem;
+                      border-radius: 0.25rem;
+                      margin-top: 1rem;
+                      cursor: pointer;
+                    "
+                  >
+                    View Projects
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 2 - 3D Animation -->
+            <div
+              class="portfolio-item scale-in"
+              data-category="3D Animation"
+              data-subcategories="portfolio/small_animation/s-animation.html,portfolio/small_animation/lighting.html,portfolio/small_animation/modeling.html,portfolio/small_animation/rendering.html,portfolio/small_animation/rigging.html,portfolio/small_animation/simulations.html,portfolio/small_animation/texturing.html"
+              data-names="Animation,Lighting,Modeling,Rendering,Rigging,Simulations,Texturing"
+              style="animation-delay: 0.2s"
+            >
+              <div
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  border-radius: 0.5rem;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="assets/3D/sample-1.png"
+                  alt="3D Animation Project"
+                  loading="lazy"
+                  style="
+                    width: 100%;
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.3s ease;
+                  "
+                />
+                <div
+                  style="
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 0%,
+                      rgba(0, 0, 0, 0) 100%
+                    );
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 1.5rem;
+                  "
+                >
+                  <h3
+                    style="
+                      color: white;
+                      font-size: 1.25rem;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    3D Animation
+                  </h3>
+                  <p
+                    style="color: rgba(255, 255, 255, 0.8); font-size: 0.875rem"
+                  >
+                    Modeling & Animation
+                  </p>
+                  <button
+                    class="view-project-btn"
+                    style="
+                      background-color: var(--secondary-color);
+                      color: white;
+                      border: none;
+                      padding: 0.5rem 1rem;
+                      border-radius: 0.25rem;
+                      margin-top: 1rem;
+                      cursor: pointer;
+                    "
+                  >
+                    View Projects
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 3 - Graphics -->
+            <div
+              class="portfolio-item scale-in"
+              data-category="Graphics"
+              data-subcategories="portfolio/Graphics/graphics-icon-design.html,portfolio/Graphics/graphics-illustration.html,portfolio/Graphics/graphics-logo-design.html,portfolio/Graphics/graphics-matte-painting.html,portfolio/Graphics/graphics-packaging-design.html,portfolio/Graphics/graphics-posters.html,portfolio/Graphics/graphics-print-design.html,portfolio/Graphics/graphics-typography.html,portfolio/Graphics/graphics-ui-ux-design.html,portfolio/Graphics/graphics-web-design.html"
+              data-names="Icon Design,Illustration,Logo Design,Matte Painting,Packaging Design,Posters,Print Design,Typography,UI/UX Design,Web Design"
+              style="animation-delay: 0.3s"
+            >
+              <div
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  border-radius: 0.5rem;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="assets/graphics/sample-1.png"
+                  alt="Graphics Project"
+                  loading="lazy"
+                  style="
+                    width: 100%;
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.3s ease;
+                  "
+                />
+                <div
+                  style="
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 0%,
+                      rgba(0, 0, 0, 0) 100%
+                    );
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 1.5rem;
+                  "
+                >
+                  <h3
+                    style="
+                      color: white;
+                      font-size: 1.25rem;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    Graphics
+                  </h3>
+                  <p
+                    style="color: rgba(255, 255, 255, 0.8); font-size: 0.875rem"
+                  >
+                    Design & Illustration
+                  </p>
+                  <button
+                    class="view-project-btn"
+                    style="
+                      background-color: var(--accent-color);
+                      color: white;
+                      border: none;
+                      padding: 0.5rem 1rem;
+                      border-radius: 0.25rem;
+                      margin-top: 1rem;
+                      cursor: pointer;
+                    "
+                  >
+                    View Projects
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 4 - VFX -->
+            <div
+              class="portfolio-item scale-in"
+              data-category="VFX"
+              data-subcategories="portfolio/VFX/compositing.html,portfolio/VFX/keying.html,portfolio/VFX/matchmoving.html,portfolio/VFX/particles.html,portfolio/VFX/rotoscoping.html,portfolio/VFX/simulation.html"
+              data-names="Compositing,Keying,Matchmoving,Particles,Rotoscoping,Simulation"
+              style="animation-delay: 0.4s"
+            >
+              <div
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  border-radius: 0.5rem;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="assets/vfx/sample.png"
+                  alt="VFX Project"
+                  loading="lazy"
+                  style="
+                    width: 100%;
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.3s ease;
+                  "
+                />
+                <div
+                  style="
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 0%,
+                      rgba(0, 0, 0, 0) 100%
+                    );
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 1.5rem;
+                  "
+                >
+                  <h3
+                    style="
+                      color: white;
+                      font-size: 1.25rem;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    Visual Effects
+                  </h3>
+                  <p
+                    style="color: rgba(255, 255, 255, 0.8); font-size: 0.875rem"
+                  >
+                    VFX & Compositing
+                  </p>
+                  <button
+                    class="view-project-btn"
+                    style="
+                      background-color: #f59e0b;
+                      color: white;
+                      border: none;
+                      padding: 0.5rem 1rem;
+                      border-radius: 0.25rem;
+                      margin-top: 1rem;
+                      cursor: pointer;
+                    "
+                  >
+                    View Projects
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 5 - Video -->
+            <div
+              class="portfolio-item scale-in"
+              data-category="Video"
+              data-subcategories="portfolio/video/video-corporate-videos.html,portfolio/video/video-documentaries.html,portfolio/video/video-event-videos.html,portfolio/video/video-motion-graphics.html,portfolio/video/video-music-videos.html,portfolio/video/video-short-films.html,portfolio/video/video-social-media-content.html,portfolio/video/video-youtube-content.html"
+              data-names="Corporate Videos,Documentaries,Event Videos,Motion Graphics,Music Videos,Short Films,Social Media Content,YouTube Content"
+              style="animation-delay: 0.5s"
+            >
+              <div
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  border-radius: 0.5rem;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="assets/video/sample-1.png"
+                  alt="Video Project"
+                  loading="lazy"
+                  style="
+                    width: 100%;
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.3s ease;
+                  "
+                />
+                <div
+                  style="
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 0%,
+                      rgba(0, 0, 0, 0) 100%
+                    );
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 1.5rem;
+                  "
+                >
+                  <h3
+                    style="
+                      color: white;
+                      font-size: 1.25rem;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    Video
+                  </h3>
+                  <p
+                    style="color: rgba(255, 255, 255, 0.8); font-size: 0.875rem"
+                  >
+                    Film & Editing
+                  </p>
+                  <button
+                    class="view-project-btn"
+                    style="
+                      background-color: #10b981;
+                      color: white;
+                      border: none;
+                      padding: 0.5rem 1rem;
+                      border-radius: 0.25rem;
+                      margin-top: 1rem;
+                      cursor: pointer;
+                    "
+                  >
+                    View Projects
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 6 - Web -->
+            <div
+              class="portfolio-item scale-in"
+              data-category="Web"
+              data-subcategories="backend-development.html,cms-design.html,ecommerce.html,frontend-development.html,responsive-web-design.html,web-accessibility.html,web-animation.html"
+              data-names="Backend Development,CMS Design,E-commerce,Frontend Development,Responsive Design,Web Accessibility,Web Animation"
+              style="animation-delay: 0.6s"
+            >
+              <div
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  border-radius: 0.5rem;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="assets/web-design/sample-1.png"
+                  alt="Web Project"
+                  loading="lazy"
+                  style="
+                    width: 100%;
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.3s ease;
+                  "
+                />
+                <div
+                  style="
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(
+                      to top,
+                      rgba(0, 0, 0, 0.8) 0%,
+                      rgba(0, 0, 0, 0) 100%
+                    );
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 1.5rem;
+                  "
+                >
+                  <h3
+                    style="
+                      color: white;
+                      font-size: 1.25rem;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    Web Development
+                  </h3>
+                  <p
+                    style="color: rgba(255, 255, 255, 0.8); font-size: 0.875rem"
+                  >
+                    Frontend & Backend
+                  </p>
+                  <button
+                    class="view-project-btn"
+                    style="
+                      background-color: #6366f1;
+                      color: white;
+                      border: none;
+                      padding: 0.5rem 1rem;
+                      border-radius: 0.25rem;
+                      margin-top: 1rem;
+                      cursor: pointer;
+                    "
+                  >
+                    View Projects
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <div class="container">
+          <!-- Section title -->
+          <h2 class="section-title">Get in Touch</h2>
+
+          <!-- Formspree form (keep your action URL private) -->
+          <form
+            id="contact-form"
+            class="contact-form"
+            action="https://formspree.io/f/mzzdvvob"
+            method="POST"
+          >
+            <!-- Name field -->
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="_replyto"
+                class="form-control"
+                placeholder="your.email@example.com"
+                required
+              />
+            </div>
+
+            <!-- Subject field -->
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                class="form-control"
+                placeholder="What is this regarding?"
+              />
+            </div>
+
+            <!-- Message field -->
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+                rows="5"
+                placeholder="Tell me about your project or enquiry"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Redirect on success (keep this URL private) -->
+            <input
+              type="hidden"
+              name="_next"
+              value="https://anubhab521.github.io/Creative-Portfolio/thank-you.html"
+            />
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--bg-alt-color); padding: 4rem 0 2rem">
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+          "
+        >
+          <div style="flex: 1 1 250px">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem">
+              Anubhab Jana
+            </h3>
+            <p style="margin-bottom: 1.5rem; max-width: 300px">
+              Creating memorable digital experiences through innovative design,
+              animation, and development.
+            </p>
+            <div style="display: flex; gap: 1rem">
+              <a
+                href="https://www.youtube.com/"
+                style="color: var(--text-color); font-size: 1.25rem"
+                aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                style="color: var(--text-color); font-size: 1.25rem"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href=" https://www.linkedin.com/"
+                style="color: var(--text-color); font-size: 1.25rem"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.behance.net/"
+                style="color: var(--text-color); font-size: 1.25rem"
+                aria-label="Behance"
+                ><i class="fab fa-behance"></i
+              ></a>
+            </div>
+          </div>
+
+          <div style="flex: 1 1 150px">
+            <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem">Sections</h3>
+            <ul style="list-style: none; padding: 0; margin: 0">
+              <li style="margin-bottom: 0.75rem">
+                <a href="#home" style="color: var(--text-color)">Home</a>
+              </li>
+              <li style="margin-bottom: 0.75rem">
+                <a href="#about" style="color: var(--text-color)">About</a>
+              </li>
+              <li style="margin-bottom: 0.75rem">
+                <a href="#skills" style="color: var(--text-color)">Skills</a>
+              </li>
+              <li style="margin-bottom: 0.75rem">
+                <a href="#portfolio" style="color: var(--text-color)"
+                  >Portfolio</a
+                >
+              </li>
+              <li style="margin-bottom: 0.75rem">
+                <a href="#contact" style="color: var(--text-color)">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div style="flex: 1 1 250px">
+            <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem">Contact</h3>
+            <ul style="list-style: none; padding: 0; margin: 0">
+              <li
+                style="
+                  margin-bottom: 1rem;
+                  display: flex;
+                  align-items: flex-start;
+                "
+              >
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="
+                    margin-right: 0.75rem;
+                    color: var(--accent-color);
+                    margin-top: 0.25rem;
+                  "
+                ></i>
+                <span>123 Creative Way, Design City, 12345</span>
+              </li>
+              <li
+                style="margin-bottom: 1rem; display: flex; align-items: center"
+              >
+                <i
+                  class="fas fa-envelope"
+                  style="margin-right: 0.75rem; color: var(--accent-color)"
+                ></i>
+                <a
+                  href="mailto:contact@example.com"
+                  style="color: var(--text-color)"
+                  >contact@example.com</a
+                >
+              </li>
+              <li
+                style="margin-bottom: 1rem; display: flex; align-items: center"
+              >
+                <i
+                  class="fas fa-phone"
+                  style="margin-right: 0.75rem; color: var(--accent-color)"
+                ></i>
+                <a href="tel:+1234567890" style="color: var(--text-color)"
+                  >(123) 456-7890</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          style="
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+          "
+        >
+          <p>
+            &copy; <span id="current-year">2023</span> Anubhab Jana. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolio-modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div style="padding: 2rem">
+          <h2
+            id="modal-title"
+            style="font-size: 1.5rem; margin-bottom: 1rem"
+          ></h2>
+          <div style="margin-bottom: 1.5rem">
+            <img
+              id="modal-image"
+              alt="Portfolio item"
+              style="width: 100%; border-radius: 0.5rem"
+            />
+          </div>
+          <p id="modal-category" style="margin-bottom: 1rem"></p>
+          <p>Double-click on portfolio items to see full details.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subcategory Modal -->
+    <div id="subcategory-modal" class="modal">
+      <div class="modal-content" style="max-width: 600px">
+        <span class="modal-close">&times;</span>
+        <div style="padding: 2rem">
+          <h2
+            id="subcategory-title"
+            style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center"
+          ></h2>
+          <div
+            id="subcategory-buttons"
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.75rem;
+              justify-content: center;
+              margin-bottom: 1rem;
+            "
+          >
+            <!-- Subcategory buttons will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Update copyright year
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
