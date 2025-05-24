@@ -3,18 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thank You - Anubhab Jana</title>
-
-    <!-- Font Awesome -->
+    <title>Anubhab Jana - Creative Portfolio</title>
+    <!-- Meta description for SEO -->
+    <meta
+      name="description"
+      content="Anubhab Jana is a multimedia artist and developer specializing in Graphics, VFX, 3D Animation, Video Editing, and Web Development."
+    />
+    <!-- Google Fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-    <!-- Stylesheets -->
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Scripts -->
+    <!-- Main JS (handles theme, nav, portfolio modals) -->
     <script src="js/script.js" defer></script>
   </head>
   <body>
@@ -22,25 +31,32 @@
     <header>
       <div class="container">
         <nav>
+          <!-- Logo -->
           <div class="nav-left">
-            <a href="../../index.html" class="nav-logo">
+            <a href="#" class="nav-logo">
               <span class="logo-anubhab">Anubhab</span>
               <span class="logo-jana">Jana</span>
             </a>
           </div>
+
+          <!-- Desktop Links + Search + Theme Toggle -->
           <div class="nav-right">
-            <a href="../../index.html#home" class="nav-link">Home</a>
-            <a href="../../index.html#about" class="nav-link">About</a>
-            <a href="../../index.html#skills" class="nav-link">Skills</a>
-            <a href="../../index.html#portfolio" class="nav-link">Portfolio</a>
-            <a href="../../index.html#contact" class="nav-link">Contact</a>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <!-- Search button triggers JS to open popup -->
             <button id="search-icon" aria-label="Search">
               <i class="fas fa-search"></i>
             </button>
+            <!-- Theme toggle checkbox + visual switch -->
             <input type="checkbox" id="theme-toggle-desktop" class="sr-only" />
             <label for="theme-toggle-desktop" class="toggle-switch"></label>
             <span id="theme-text-desktop">Dark Mode</span>
           </div>
+
+          <!-- Mobile hamburger button toggles nav popup -->
           <div class="hamburger-menu" id="hamburger-menu">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -48,21 +64,25 @@
           </div>
         </nav>
       </div>
+
+      <!-- Mobile Navigation Popup -->
       <div class="hamburger-popup" id="hamburger-popup">
         <div class="hamburger-popup-content">
+          <!-- Mobile Search Input (JS can handle enter key) -->
           <div class="hamburger-search">
-            <i class="fas fa-search"></i>
             <input
               type="text"
               placeholder="Search..."
               id="hamburger-search-input"
             />
           </div>
-          <a href="../../index.html#home" class="nav-link">Home</a>
-          <a href="../../index.html#about" class="nav-link">About</a>
-          <a href="../../index.html#skills" class="nav-link">Skills</a>
-          <a href="../../index.html#portfolio" class="nav-link">Portfolio</a>
-          <a href="../../index.html#contact" class="nav-link">Contact</a>
+          <!-- Mobile nav links -->
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <!-- Theme toggle for mobile -->
           <div class="hamburger-theme-toggle">
             <input type="checkbox" id="theme-toggle-mobile" class="sr-only" />
             <label for="theme-toggle-mobile" class="toggle-switch"></label>
