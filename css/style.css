@@ -1378,3 +1378,19 @@ img, video {
 .lightbox-caption {
   display: none !important;
 }
+
+/* ---------------------------------------------
+   Honeypot & reCAPTCHA Adjustments for Contact Form
+--------------------------------------------- */
+
+/* 1) Hide the invisible honeypot field so it never takes up space */
+.contact-form input[name="_gotcha"] {
+  display: none !important;
+}
+
+/* 2) Center and space out the reCAPTCHA widget */
+.contact-form .g-recaptcha {
+  margin: 1rem 0;               /* vertical spacing */
+  display: flex;
+  justify-content: center;     /* center the widget */
+}

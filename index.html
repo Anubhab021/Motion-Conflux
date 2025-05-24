@@ -747,14 +747,23 @@
           <!-- Section title -->
           <h2 class="section-title">Get in Touch</h2>
 
-          <!-- Formspree form (keep your action URL private) -->
+          <!-- Formspree form -->
           <form
             id="contact-form"
             class="contact-form"
             action="https://formspree.io/f/mzzdvvob"
             method="POST"
           >
-            <!-- Name field -->
+            <!-- 1) Honeypot field: invisible to real users, traps bots -->
+            <input
+              type="text"
+              name="_gotcha"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <!-- 2) Name field -->
             <div class="form-group">
               <label for="name" class="form-label">Name</label>
               <input
@@ -767,7 +776,7 @@
               />
             </div>
 
-            <!-- Email field -->
+            <!-- 3) Email field -->
             <div class="form-group">
               <label for="email" class="form-label">Email</label>
               <input
@@ -780,7 +789,7 @@
               />
             </div>
 
-            <!-- Subject field -->
+            <!-- 4) Subject field -->
             <div class="form-group">
               <label for="subject" class="form-label">Subject</label>
               <input
@@ -792,7 +801,7 @@
               />
             </div>
 
-            <!-- Message field -->
+            <!-- 5) Message field -->
             <div class="form-group">
               <label for="message" class="form-label">Message</label>
               <textarea
@@ -805,14 +814,20 @@
               ></textarea>
             </div>
 
-            <!-- Redirect on success (keep this URL private) -->
+            <!-- 6) (Optional) reCAPTCHA widget -->
+            <!--
+      <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      -->
+
+            <!-- 7) Redirect on success -->
             <input
               type="hidden"
               name="_next"
               value="https://anubhab521.github.io/Creative-Portfolio/thank-you.html"
             />
 
-            <!-- Submit button -->
+            <!-- 8) Submit button -->
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>
