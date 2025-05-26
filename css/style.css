@@ -285,6 +285,24 @@ nav {
 input:checked + .toggle-switch::before {
   transform: translateX(20px);
 }
+/* ----------------------------------
+   Hamburger Menu & Popup (additions)
+---------------------------------- */
+
+/* stack & space out each link */
+.hamburger-popup .nav-link {
+  display: block;
+  margin: 1rem 0;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* show the search icon in the popup */
+.hamburger-search i {
+  margin-right: 0.5rem;
+  color: var(--text-color);
+}
+
 
 /* ----------------------------------
    Navigation & Search (Desktop)
