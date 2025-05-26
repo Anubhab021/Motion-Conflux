@@ -54,8 +54,19 @@ body {
   background-color: var(--bg-color);
   line-height: 1.6;
   transition: var(--transition-default);
+  /* Always show background image on body */
+  background: url('assets/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
+
+/* Optional: Use a different image or style for mobile, but don't remove it */
+@media (max-width: 768px) {
+  body {
+    background: url('../assets/home-bg/hero-bg.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
 
 a {
   color: var(--primary-color); /* Ensure links are visible */
@@ -473,6 +484,27 @@ nav > * {
   padding-top: 5rem;
 }
 
+/* Hero section background image for all screens */
+.hero {
+  background-image: url('../assets/home-bg/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Remove any mobile override that hides the image */
+@media (max-width: 768px) {
+  .hero {
+    /* Optionally, use a different image for mobile: */
+    /* background-image: url('../assets/home-bg/hero-bg.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -841,15 +873,6 @@ section#skills .skills-card .skill h3 {
   background-color: rgba(124, 58, 237, 0.9); /* Slightly darker on hover */
 }
 
-/* Links (Light Mode) */
-[data-theme="light"] a {
-  color: var(--primary-color); /* Primary color for links */
-}
-
-[data-theme="light"] a:hover {
-  color: rgba(124, 58, 237, 0.9); /* Slightly darker on hover */
-}
-
 /* Modal */
 .modal {
   display: none; /* Hidden by default */
@@ -1189,6 +1212,18 @@ footer .footer-text {
   }
 }
 
+/* Fix section gap/black border issue on mobile */
+@media (max-width: 768px) {
+  section {
+    background: var(--background-color, #111827) !important; /* fallback to dark bg */
+    border: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    background: var(--background-color, #111827) !important;
+  }
+}
+
 /* Hamburger Menu Animation */
 .hamburger-menu.active .hamburger-line:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
@@ -1496,3 +1531,18 @@ img, video {
         }
       }
 
+      /* === MOBILE SECTION‐GAP FIX (must come last!) === */
+      @media (max-width: 768px) {
+        section {
+          padding: 2rem 0 !important;
+          overflow: hidden !important;
+        }
+        section > *:first-child {
+          margin-top: 0 !important; /* Remove top margin for first child */
+        }
+      }
+
+[data-theme="light"] section,
+[data-theme="light"] body {
+  background: #f9fafb !important; /* or your light bg color */
+}

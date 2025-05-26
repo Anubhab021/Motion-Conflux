@@ -164,6 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(skillsSection);
 
   // Animate Circular Progress Bars Using Canvas
+  // To add more skill graphs, just add more objects to this array.
+  // Example: { id: "newSkillCanvas", percentage: 60, color: "#FF0000" }
   const skillsData = [
     { id: "photoshopCanvas", percentage: 90, color: "#31A8FF" },
     { id: "premiereCanvas", percentage: 85, color: "#9999FF" },
@@ -171,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: "afterEffectsCanvas", percentage: 75, color: "#AE81FF" },
     { id: "htmlCssCanvas", percentage: 70, color: "#E44D26" },
     { id: "javascriptCanvas", percentage: 65, color: "#F7DF1E" },
+    // { id: "newSkillCanvas", percentage: 60, color: "#FF0000" }, // Example
   ];
 
   function drawCircle(canvasId, percentage, color) {
@@ -212,7 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Percentage Text
       ctx.font = "16px Arial";
-      ctx.fillStyle = "#fff";
+      // Use CSS variable for text color for both themes
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-color') || "#fff";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText(`${currentPercentage}%`, centerX, centerY);
