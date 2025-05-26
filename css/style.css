@@ -529,6 +529,23 @@ section {
 }
 
 .section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 4px;
+  margin: 0.5rem auto 0 auto;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+.section-title {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
@@ -560,6 +577,64 @@ section {
 
 .portfolio-item {
   text-align: center; /* Center-align text and buttons */
+  transition: transform 0.35s cubic-bezier(.23,1.02,.32,1), box-shadow 0.25s;
+  box-shadow: 0 2px 8px rgba(80,80,80,0.08);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--bg-color);
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.23,1.02,.32,1), transform 0.7s cubic-bezier(.23,1.02,.32,1);
+}
+
+.portfolio-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-item:hover {
+  transform: scale(1.035) translateY(-6px);
+  box-shadow: 0 8px 32px rgba(80,80,80,0.13);
+  z-index: 2;
+}
+
+/* Animate the image inside the card */
+.portfolio-item img {
+  transition: transform 0.5s cubic-bezier(.23,1.02,.32,1), filter 0.3s;
+  will-change: transform;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.08) rotate(-1deg);
+  filter: brightness(1.07) saturate(1.1);
+}
+
+/* Portfolio Card Overlay Animation */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(14,165,233,0.08) 0%, rgba(124,58,237,0.10) 100%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(.23,1.02,.32,1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.portfolio-item:hover::before {
+  opacity: 1;
+}
+
+.portfolio-item .btn,
+.portfolio-item button {
+  position: relative;
+  z-index: 2;
 }
 
 /* My Portfolio Section (Light Mode) */
@@ -893,12 +968,17 @@ section#skills .skills-card .skill h3 {
 }
 
 .modal-content {
-  background: var(--bg-color);
+  background: #181c24; /* Solid dark background for contrast */
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  max-width: 500px;
+  width: 90vw;
+  margin: 2rem auto;
+  animation: modal-pop 0.35s cubic-bezier(.23,1.02,.32,1) both;
+  position: relative;
   padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  width: 90%;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .modal-close {
@@ -924,24 +1004,35 @@ section#skills .skills-card .skill h3 {
   transition: transform 0.2s ease;
 }
 
-#subcategory-buttons .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  opacity: 1;
-}
-
+/* Modern Subcategory Buttons in Portfolio Modal */
+#subcategory-buttons .btn,
 #subcategory-buttons button {
-  padding: 0.5rem 1rem;
-  background: var(--primary-color);
-  color: white;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: #fff;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(80,80,80,0.08);
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s, transform 0.18s, box-shadow 0.18s;
+  margin: 0.25rem;
+  outline: none;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-#subcategory-buttons button:hover {
-  background: var(--secondary-color);
+#subcategory-buttons .btn:hover,
+#subcategory-buttons button:hover,
+#subcategory-buttons .btn:focus,
+#subcategory-buttons button:focus {
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(80,80,80,0.13);
+  opacity: 1;
 }
 
 /* Search Button Styles */
@@ -1443,12 +1534,35 @@ img, video {
 
 /* 2) Center and space out the reCAPTCHA widget */
 .contact-form .g-recaptcha {
-  margin: 1rem 0;               /* vertical spacing */
+  margin: 1.5rem 0 1rem 0;
   display: flex;
-  justify-content: center;     /* center the widget */
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-alt-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(80,80,80,0.08);
+  padding: 1rem 0.5rem;
+  min-height: 78px;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.contact-form .g-recaptcha:focus-within,
+.contact-form .g-recaptcha:hover {
+  box-shadow: 0 0 0 3px rgba(14,165,233,0.12);
+  border-color: var(--primary-color);
 }
 
-      /* Page-specific styles */
+/* Make all subcategory buttons the same width */
+#subcategory-buttons .btn,
+#subcategory-buttons button {
+  min-width: 160px;      /* Minimum width for all buttons */
+  justify-content: center; /* Center text inside */
+  text-align: center;
+  flex: 1 1 160px;       /* Allow buttons to grow/shrink but keep min width */
+  box-sizing: border-box;
+}
+
+/* Page-specific styles */
       .thank-you-container {
         display: flex;
         flex-direction: column;
@@ -1545,4 +1659,125 @@ img, video {
 [data-theme="light"] section,
 [data-theme="light"] body {
   background: #f9fafb !important; /* or your light bg color */
+}
+
+.portfolio-item .btn,
+.portfolio-item button {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(80,80,80,0.08);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.18s, box-shadow 0.18s;
+  margin: 0.75rem auto 0 auto;
+  display: inline-block;
+}
+
+.portfolio-item .btn:hover,
+.portfolio-item button:hover {
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 4px 16px rgba(80,80,80,0.13);
+}
+
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(30, 32, 38, 0.75);
+  backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.modal.active {
+  display: flex;
+  animation: modal-fade-in 0.35s cubic-bezier(.23,1.02,.32,1);
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+.modal-content {
+  background: #181c24; /* Solid dark background for contrast */
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  max-width: 500px;
+  width: 90vw;
+  margin: 2rem auto;
+  animation: modal-pop 0.35s cubic-bezier(.23,1.02,.32,1) both;
+  position: relative;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+@keyframes modal-pop {
+  0% { transform: scale(0.92) translateY(40px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s;
+  background: rgba(0,0,0,0.08);
+  border-radius: 50%;
+  padding: 0.25em 0.5em;
+}
+.modal-close:hover { color: var(--accent-color); background: rgba(0,0,0,0.18);}
+
+#subcategory-buttons .btn,
+#subcategory-buttons button {
+  box-shadow: 0 2px 8px rgba(80,80,80,0.08);
+}
+
+#subcategory-buttons .btn:hover,
+#subcategory-buttons button:hover,
+#subcategory-buttons .btn:focus,
+#subcategory-buttons button:focus {
+  box-shadow: 0 0 0 4px rgba(14,165,233,0.15), 0 4px 16px rgba(80,80,80,0.13);
+}
+
+@keyframes float {
+  0% { transform: translateY(0);}
+  50% { transform: translateY(-8px);}
+  100% { transform: translateY(0);}
+}
+
+.portfolio-item img {
+  animation: float 4s ease-in-out infinite;
+}
+
+.btn-primary, .portfolio-item .btn, .portfolio-item button {
+  box-shadow: 0 2px 16px rgba(14,165,233,0.08);
+}
+
+.btn-primary:hover, .portfolio-item .btn:hover, .portfolio-item button:hover {
+  box-shadow: 0 4px 24px rgba(124,58,237,0.18);
+}
+
+/* Fade-in Section Animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.23,1.02,.32,1), transform 0.7s cubic-bezier(.23,1.02,.32,1);
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

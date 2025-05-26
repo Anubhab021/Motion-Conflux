@@ -257,6 +257,39 @@ document.addEventListener('DOMContentLoaded', () => {
   //   someBtn.addEventListener('click', () => { /* … */ });
   // }
   // …and likewise for any future `getElementById` or `querySelector` calls.
+
+  // Portfolio fade-in effect
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    item.classList.add('fade-in-portfolio');
+  });
+
+  function revealOnScroll() {
+    const items = document.querySelectorAll('.portfolio-item');
+    const trigger = window.innerHeight * 0.92;
+    items.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if(rect.top < trigger) {
+        item.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+  document.querySelectorAll('.modal-close').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const modal = btn.closest('.modal');
+      if (modal) modal.classList.remove('active');
+    });
+  });
+
+  if (subcategoryModal) {
+    subcategoryModal.querySelectorAll('.modal-close').forEach(btn => {
+      btn.addEventListener('click', () => {
+        subcategoryModal.style.display = 'none';
+      });
+    });
+  }
 });
         // ------------------------------
   // Disable Right-Click
