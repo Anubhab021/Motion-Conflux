@@ -48,4 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─────────────── Add more guarded listeners below ───────────────
   // For every document.getElementById or querySelector in your old script,
   // change it to this pattern so it never errors out on pages that lack that element.
+
+  // Fade-in animation for cards
+  function revealCards() {
+    document.querySelectorAll('.small_animation-item').forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.92) {
+        item.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealCards);
+  revealCards();
 });

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2D-animation</title>
+    <title>Social Media Videos</title>
 
     <!-- Font Awesome -->
     <link
@@ -78,14 +78,20 @@
     <!-- Main Content -->
     <main id="video-social-media-content-section">
       <div id="video-social-media-content">
-        <h1>Social Media Videos</h1>
+        <h1 class="video-section-title">Social Media</h1>
         <div class="Video_animation-grid">
           <div class="Video_animation-item">
             <video
               src="../../assets/video/Video_1.mp4"
               class="Video_animation-video"
               controls
+              controlsList="nodownload"
               preload="metadata"
+              autoplay
+              muted
+              playsinline
+              poster="your-poster.jpg"
+              oncontextmenu="return false;"
             >
               Your browser does not support the video tag.
             </video>
@@ -99,8 +105,16 @@
               src="../../assets/video/Video_1.mp4"
               class="Video_animation-video"
               controls
+              controlsList="nodownload"
               preload="metadata"
-            ></video>
+              autoplay
+              muted
+              playsinline
+              poster="your-poster.jpg"
+              oncontextmenu="return false;"
+            >
+              Your browser does not support the video tag.
+            </video>
             <h2>Social Media Video 2</h2>
             <p>
               Description for Social Media Video 2. This can be updated later.
@@ -108,12 +122,13 @@
           </div>
         </div>
       </div>
+      <!-- Back Button -->
+      <div class="back-button">
+        <button onclick="window.history.back()">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+      </div>
     </main>
-
-    <!-- Back Button -->
-    <div class="back-button">
-      <button onclick="window.history.back()">Back</button>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">

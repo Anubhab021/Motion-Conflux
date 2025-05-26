@@ -277,7 +277,7 @@ nav {
 
 /* Animation Section Styles */
 #graphics-icon-design-section,
-#character-animation-section,
+#graphics-posters-section,
 #motion-graphics-section,
 #small-animation-section,
 #stop-motion-section,
@@ -288,35 +288,81 @@ nav {
   margin-top: var(--header-height);
 }
 #graphics-icon-design-content h1,
-#character-animation-content h1,
+#graphics-posters-content h1,
 #motion-graphics-content h1,
 #small-animation-content h1,
 #stop-motion-content h1,
 #visual-effects-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
   color: var(--primary-color);
 }
+#graphics-icon-design-content h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0.7rem auto 0 auto;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+/* Uniform square cards for graphics */
 .Graphics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap:2rem; justify-content:center; align-items:start;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 2rem;
 }
+
 .Graphics-item {
-  background-color: var(--bg-color);
-  padding:1.5rem;
-  border-radius:.5rem;
-  box-shadow:0 4px 6px rgba(0,0,0,0.3);
-  text-align:center;
-  transition:transform .3s, box-shadow .3s;
+  background: var(--bg-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(80,80,80,0.10);
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  transition: transform 0.28s cubic-bezier(.23,1.02,.32,1), box-shadow 0.28s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 370px;
+  max-width: 350px;
+  margin: 0 auto;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.23,1.02,.32,1), transform 0.7s cubic-bezier(.23,1.02,.32,1);
 }
+
+.Graphics-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .Graphics-item:hover {
-  transform: translateY(-5px);
-  box-shadow:0 6px 10px rgba(0,0,0,0.4);
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 8px 32px rgba(14,165,233,0.13);
 }
+
+/* Square image container with object-fit */
 .Graphics-image {
-  width:100%; height:auto; border-radius:.5rem; margin-bottom:1rem;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+  background: #eee;
+  box-shadow: 0 2px 12px rgba(14,165,233,0.08);
+  transition: box-shadow 0.3s;
+  cursor: pointer;
 }
+
 .Graphics-item h2 {
   font-size:1.5rem; margin-bottom:.5rem;
   color: var(--primary-color);
@@ -327,19 +373,31 @@ nav {
 
 /* Back Button Styling */
 .back-button {
-  text-align:center; margin:20px 0;
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem 0 1.5rem 0;
+  padding-left: 1rem;
+  background: transparent;
 }
 .back-button button {
-  background-color: var(--accent-color);
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   color: #fff;
-  padding: 10px 20px; font-size:16px;
-  border:none; border-radius:5px;
-  cursor:pointer;
-  transition: background-color .3s, transform .2s;
+  padding: 0.7rem 1.7rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(80,80,80,0.08);
+  transition: background 0.3s, transform 0.18s, box-shadow 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .back-button button:hover {
-  background-color:#0099cc;
-  transform: scale(1.05);
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(80,80,80,0.13);
 }
 
 /* ----------------------------------
@@ -426,6 +484,48 @@ nav {
   color: var(--text-color); /* black in light, white in dark */
 }
 
+/* Lightbox styles */
+.graphics-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(30,32,38,0.85);
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.graphics-lightbox.active {
+  display: flex;
+  animation: fade-in 0.3s;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.graphics-lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  background: #fff;
+}
+
+.graphics-lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10001;
+  transition: color 0.2s;
+}
+.graphics-lightbox-close:hover { color: var(--accent-color);}
+
 /* --------------------------------------------------
    Footer Link Color Overrides (must come last!)
    -------------------------------------------------- */
@@ -440,6 +540,34 @@ nav {
 @media (prefers-color-scheme: light) {
   .footer-links a {
     color: var(--text-color) !important;
+  }
+}
+
+/* Responsive adjustments for graphics grid */
+@media (max-width: 600px) {
+  .Graphics-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .Graphics-item {
+    min-height: 260px;
+    max-width: 95vw;
+    padding: 0.7rem 0.5rem 1rem 0.5rem;
+  }
+}
+
+/* Hint styles for graphics items */
+.graphics-hint {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.Graphics-item:hover .graphics-hint,
+.Graphics-item:focus-within .graphics-hint {
+  opacity: 0.85;
+}
+@media (hover: none) and (pointer: coarse) {
+  .graphics-hint {
+    opacity: 0.85;
   }
 }
 

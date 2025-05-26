@@ -48,6 +48,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─────────────── Add more guarded listeners below ───────────────
   // For every document.getElementById or querySelector in your old script,
   // change it to this pattern so it never errors out on pages that lack that element.
+
+  // Lightbox for graphics images
+  const lightbox = document.getElementById('graphics-lightbox');
+  const lightboxImg = document.querySelector('.graphics-lightbox-img');
+  const lightboxClose = document.querySelector('.graphics-lightbox-close');
+  document.querySelectorAll('.Graphics-image').forEach(img => {
+    img.addEventListener('dblclick', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+  }
+  // Close on outside click
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+      }
+    });
+  }
+
+  // Fade-in animation for cards
+  function revealCards() {
+    document.querySelectorAll('.Graphics-item').forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.92) {
+        item.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealCards);
+  revealCards();
 });
 
 

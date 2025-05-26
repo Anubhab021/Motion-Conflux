@@ -290,6 +290,51 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ─────────────── BACK TO TOP BUTTON ───────────────
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Typewriter effect for title
+  const el = document.getElementById('typewriter');
+  if (el) {
+    const texts = [
+      "Multimedia Artist & Developer",
+      "Specializing in Graphics, VFX, 3D Animation, Video Editing, and Web Development"
+    ];
+    let idx = 0, char = 0, isDeleting = false;
+    function type() {
+      let current = texts[idx];
+      if (isDeleting) {
+        el.textContent = current.substring(0, char--);
+        if (char < 0) {
+          isDeleting = false;
+          idx = (idx + 1) % texts.length;
+          setTimeout(type, 600);
+        } else {
+          setTimeout(type, 30);
+        }
+      } else {
+        el.textContent = current.substring(0, char++);
+        if (char > current.length) {
+          isDeleting = true;
+          setTimeout(type, 1200);
+        } else {
+          setTimeout(type, 60);
+        }
+      }
+    }
+    type();
+  }
 });
         // ------------------------------
   // Disable Right-Click
@@ -434,6 +479,19 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+});
+
+// Fade-in effect for sections with class 'fade-in-section'
+document.querySelectorAll('.fade-in-section').forEach(section => {
+  const reveal = () => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.92) {
+      section.classList.add('visible');
+      window.removeEventListener('scroll', reveal);
+    }
+  };
+  window.addEventListener('scroll', reveal);
+  window.addEventListener('DOMContentLoaded', reveal);
 });
 
 

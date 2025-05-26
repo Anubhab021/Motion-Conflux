@@ -4,22 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lighting</title>
-
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="../../css/small_animation.css" />
-
     <!-- Scripts -->
     <script src="../../js/script.js" defer></script>
     <script src="../../js/small_animation.js" defer></script>
   </head>
-
   <body>
     <!-- Navigation Bar -->
     <header>
@@ -85,7 +81,13 @@
               src="animation-1.mp4"
               class="small_animation-video"
               controls
+              controlsList="nodownload"
               preload="metadata"
+              autoplay
+              muted
+              playsinline
+              poster="your-poster.jpg"
+              oncontextmenu="return false;"
             >
               Your browser does not support the video tag.
             </video>
@@ -97,19 +99,28 @@
               src="animation-2.mp4"
               class="small_animation-video"
               controls
+              controlsList="nodownload"
               preload="metadata"
-            ></video>
+              autoplay
+              muted
+              playsinline
+              poster="your-poster.jpg"
+              oncontextmenu="return false;"
+            >
+              Your browser does not support the video tag.
+            </video>
             <h2>Lighting 2</h2>
             <p>Description for lighting 2. This can be updated later.</p>
           </div>
         </div>
       </div>
+      <!-- Back Button -->
+      <div class="back-button">
+        <button onclick="window.history.back()">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+      </div>
     </main>
-
-    <!-- Back Button -->
-    <div class="back-button">
-      <button onclick="window.history.back()">Back</button>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -150,16 +161,16 @@
             <h3>Contact</h3>
             <ul>
               <li>
-                <i class="fas fa-map-marker-alt"></i
-                ><span>123 Creative Way, Design City, 12345</span>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>123 Creative Way, Design City, 12345</span>
               </li>
               <li>
-                <i class="fas fa-envelope"></i
-                ><a href="mailto:contact@example.com">contact@example.com</a>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@example.com">contact@example.com</a>
               </li>
               <li>
-                <i class="fas fa-phone"></i
-                ><a href="tel:+1234567890">(123) 456-7890</a>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+1234567890">(123) 456-7890</a>
               </li>
             </ul>
           </div>
@@ -172,7 +183,6 @@
         </div>
       </div>
     </footer>
-
     <script>
       document.getElementById("current-year").textContent =
         new Date().getFullYear();

@@ -87,6 +87,7 @@
               alt="Icon Design 1"
               class="Graphics-image"
             />
+            <span class="graphics-hint">Double click or tap to open</span>
             <h2>Icon Design Project 1</h2>
             <p>
               Description for Icon Design Project 1. This can be updated later.
@@ -96,10 +97,11 @@
           <!-- Icon Design 2 -->
           <div class="Graphics-item">
             <img
-              src="../../assets/graphics/Poster/1.jpg"
+              src="../../assets/graphics/Poster/2.png"
               alt="Icon Design 2"
               class="Graphics-image"
             />
+            <span class="graphics-hint">Double click or tap to open</span>
             <h2>Icon Design Project 2</h2>
             <p>
               Description for Icon Design Project 2. This can be updated later.
@@ -111,6 +113,7 @@
               alt="Icon Design 2"
               class="Graphics-image"
             />
+            <span class="graphics-hint">Double click or tap to open</span>
             <h2>Icon Design Project 3</h2>
             <p>
               Description for Icon Design Project 3. This can be updated later.
@@ -118,22 +121,17 @@
           </div>
         </div>
       </div>
+      <div class="back-button">
+        <button onclick="window.history.back()">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+      </div>
     </main>
 
-    <!-- Lightbox Modal (no caption) -->
-    <div id="lightbox-modal" class="lightbox-modal">
-      <span class="lightbox-close">&times;</span>
-      <img
-        class="lightbox-content"
-        id="lightbox-img"
-        src=""
-        alt="Expanded view"
-      />
-    </div>
-
-    <!-- Back Button -->
-    <div class="back-button">
-      <button onclick="window.history.back()">Back</button>
+    <!-- Lightbox Modal -->
+    <div id="graphics-lightbox" class="graphics-lightbox">
+      <span class="graphics-lightbox-close">&times;</span>
+      <img class="graphics-lightbox-img" src="" alt="Full Size" />
     </div>
 
     <!-- Footer -->
