@@ -494,6 +494,29 @@ document.querySelectorAll('.fade-in-section').forEach(section => {
   window.addEventListener('DOMContentLoaded', reveal);
 });
 
+// Media overlay double-click to enlarge image
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.media-overlay').forEach(overlay => {
+    overlay.addEventListener('dblclick', function () {
+      const img = this.previousElementSibling;
+      if (img && img.tagName === 'IMG') {
+        const lightbox = document.getElementById('graphics-lightbox');
+        const lightboxImg = document.querySelector('.graphics-lightbox-img');
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      }
+    });
+  });
+
+  // Close lightbox
+  document.querySelector('.graphics-lightbox-close').onclick = function () {
+    document.getElementById('graphics-lightbox').style.display = 'none';
+  };
+  document.getElementById('graphics-lightbox').onclick = function (e) {
+    if (e.target === this) this.style.display = 'none';
+  };
+});
+
 
 
 
