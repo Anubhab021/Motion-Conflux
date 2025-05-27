@@ -78,14 +78,20 @@
     <!-- Main Content -->
     <main id="character-animation-section">
       <div id="character-animation-content">
-        <h1>Character Animation</h1>
+        <h1 class="big_animation-section-title">Character Animation</h1>
         <div class="big_animation-grid">
           <div class="big_animation-item">
             <video
-              src="animation-1.mp4"
+              src="../../assets/video/Video_1.mp4"
               class="big_animation-video"
               controls
+              controlsList="nodownload"
               preload="metadata"
+              autoplay
+              muted
+              playsinline
+              poster="your-poster.jpg"
+              oncontextmenu="return false;"
             >
               Your browser does not support the video tag.
             </video>
@@ -96,11 +102,19 @@
           </div>
           <div class="big_animation-item">
             <video
-              src="animation-2.mp4"
+              src="../../assets/video/Video_1.mp4"
               class="big_animation-video"
               controls
+              controlsList="nodownload"
               preload="metadata"
-            ></video>
+              autoplay
+              muted
+              playsinline
+              poster="your-poster.jpg"
+              oncontextmenu="return false;"
+            >
+              Your browser does not support the video tag.
+            </video>
             <h2>Character Animation 2</h2>
             <p>
               Description for character-animation 2. This can be updated later.
@@ -108,12 +122,13 @@
           </div>
         </div>
       </div>
+      <!-- Back Button -->
+      <div class="back-button">
+        <button onclick="window.history.back()">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+      </div>
     </main>
-
-    <!-- Back Button -->
-    <div class="back-button">
-      <button onclick="window.history.back()">Back</button>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
