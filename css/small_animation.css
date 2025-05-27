@@ -301,7 +301,7 @@ nav {
   margin-bottom: 2rem;
   color: var(--primary-color);
 }
-#s-animation-content h1 {
+.small_animation_section_title {
   font-size: 2.2rem;
   font-weight: 800;
   text-align: center;
@@ -309,7 +309,7 @@ nav {
   position: relative;
   color: var(--primary-color);
 }
-#s-animation-content h1::after {
+.small_animation_section_title::after {
   content: '';
   display: block;
   width: 60px;

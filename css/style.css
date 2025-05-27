@@ -2031,3 +2031,22 @@ img, video {
 @media (max-width: 900px) {
   .floating-socials { display: none; }
 }
+
+/* Media Protect Classes */
+.media-protect {
+  position: relative;
+  display: inline-block;
+}
+.media-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  z-index: 2;
+  background: transparent;
+  pointer-events: all;
+}
+.media-protect img, .media-protect video {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}

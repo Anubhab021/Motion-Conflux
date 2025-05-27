@@ -78,38 +78,53 @@
     <!-- Main Content -->
     <main id="visual-effects-section">
       <div id="visual-effects-content">
-        <h1>2D Animation</h1>
+        <h1 class="big_animation-section-title">Visual Effects</h1>
         <div class="big_animation-grid">
           <div class="big_animation-item">
             <video
-              src="animation-1.mp4"
+              src="../../assets/video/"
               class="big_animation-video"
               controls
+              controlsList="nodownload"
               preload="metadata"
+              autoplay
+              muted
+              playsinline
+              poster="your-poster.jpg"
+              oncontextmenu="return false;"
             >
               Your browser does not support the video tag.
             </video>
-            <h2>2D Animation 1</h2>
-            <p>Description for 2D-animation 1. This can be updated later.</p>
+            <h2>Visual Effects 1</h2>
+            <p>Description for Visual Effects 1. This can be updated later.</p>
           </div>
           <div class="big_animation-item">
             <video
-              src="animation-2.mp4"
+              src="../../assets/video/"
               class="big_animation-video"
               controls
+              controlsList="nodownload"
               preload="metadata"
-            ></video>
-            <h2>2D Animation 2</h2>
-            <p>Description for 2D-animation 2. This can be updated later.</p>
+              autoplay
+              muted
+              playsinline
+              poster="your-poster.jpg"
+              oncontextmenu="return false;"
+            >
+              Your browser does not support the video tag.
+            </video>
+            <h2>Visual Effects 2</h2>
+            <p>Description for Visual Effects 2. This can be updated later.</p>
           </div>
         </div>
       </div>
+      <!-- Back Button -->
+      <div class="back-button">
+        <button onclick="window.history.back()">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+      </div>
     </main>
-
-    <!-- Back Button -->
-    <div class="back-button">
-      <button onclick="window.history.back()">Back</button>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
