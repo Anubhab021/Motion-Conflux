@@ -2050,3 +2050,12 @@ img, video {
   pointer-events: none;
   user-select: none;
 }
+
+.about-me-bg {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-position: center;
+  display: block;
+}
