@@ -86,27 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('scroll', revealCards);
   revealCards();
-
-  // For each card image overlay, open the lightbox on double click
-  document.querySelectorAll('.Graphics-item .media-overlay').forEach(overlay => {
-    overlay.addEventListener('dblclick', function () {
-      const img = this.previousElementSibling;
-      if (img && img.tagName === 'IMG') {
-        // Set the lightbox image src
-        document.querySelector('#graphics-lightbox .graphics-lightbox').src = img.src;
-        document.getElementById('graphics-lightbox').style.display = 'flex';
-      }
-    });
-  });
-
-  // Close lightbox on close button
-  document.querySelector('.graphics-lightbox-close').onclick = function () {
-    document.getElementById('graphics-lightbox').style.display = 'none';
-  };
-  // Optional: close on clicking outside the image
-  document.getElementById('graphics-lightbox').onclick = function (e) {
-    if (e.target === this) this.style.display = 'none';
-  };
 });
 
 
