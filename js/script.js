@@ -33,20 +33,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // ─────────────── HAMBURGER MENU ───────────────
   const burger = document.getElementById("hamburger-menu");
   const mobilePopup = document.getElementById("hamburger-popup");
+  let isMenuOpen = false;
 
   if (burger && mobilePopup) {
-    burger.addEventListener("click", () => {
+    // Toggle menu
+    burger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      isMenuOpen = !isMenuOpen;
       burger.classList.toggle("active");
       mobilePopup.classList.toggle("active");
+      document.body.style.overflow = isMenuOpen ? "hidden" : "";
     });
 
+    // Close on outside click
     document.addEventListener("click", (e) => {
-      if (!mobilePopup.contains(e.target) && !burger.contains(e.target)) {
+      if (
+        isMenuOpen &&
+        !mobilePopup.contains(e.target) &&
+        !burger.contains(e.target)
+      ) {
+        isMenuOpen = false;
         burger.classList.remove("active");
         mobilePopup.classList.remove("active");
+        document.body.style.overflow = "";
       }
     });
 
+    // Handle mobile nav links
     mobilePopup.querySelectorAll(".nav-link").forEach((link) => {
       link.addEventListener("click", () => {
         burger.classList.remove("active");

@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-10-29",
+  "categories": {
+    "Graphics": {
+      "id": "graphics",
+      "title": "Graphics",
+      "description": "Graphic design projects including posters, branding, and visual art",
+      "subcategories": ["Posters", "Branding", "Illustrations", "UI/UX"]
+    },
+    "VFX": {
+      "id": "vfx",
+      "title": "Visual Effects",
+      "description": "Visual effects and compositing work",
+      "subcategories": ["Compositing", "3D Integration", "Motion Graphics"]
+    },
+    "Animation": {
+      "id": "animation",
+      "title": "Animation",
+      "description": "2D and 3D animation projects",
+      "subcategories": [
+        "Character Animation",
+        "Motion Graphics",
+        "Visual Effects"
+      ]
+    }
+  },
+  "projects": [
+    {
+      "id": "puro-heritage-01",
+      "title": "Puro Heritage Poster",
+      "category": "Graphics",
+      "subcategory": "Posters",
+      "thumbnail": "/assets/graphics/Poster/puro-heritage-thumb.jpg",
+      "media": {
+        "main": "/assets/graphics/Poster/puro-heritage-full.jpg",
+        "additional": []
+      },
+      "description": "Poster design for brand launch showcasing heritage themes.",
+      "year": 2025,
+      "tags": ["poster", "branding", "heritage"],
+      "tools": ["Photoshop", "Illustrator"],
+      "highlight": true
+    },
+    {
+      "id": "vfx-shot-01",
+      "title": "VFX Integration Shot",
+      "category": "VFX",
+      "subcategory": "Compositing",
+      "thumbnail": "/assets/vfx/thumbs/vfx-shot-01.gif",
+      "media": {
+        "main": "/assets/vfx/videos/vfx-shot-01.mp4",
+        "additional": ["/assets/vfx/breakdown/vfx-shot-01-breakdown.mp4"]
+      },
+      "description": "Complex VFX shot with 3D integration and environment work.",
+      "year": 2024,
+      "tags": ["vfx", "compositing", "3d-integration"],
+      "tools": ["Nuke", "Maya", "Houdini"],
+      "highlight": true
+    }
+  ],
+  "tags": [
+    "poster",
+    "branding",
+    "heritage",
+    "vfx",
+    "compositing",
+    "3d-integration",
+    "motion-graphics",
+    "character-animation"
+  ]
+}

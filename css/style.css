@@ -1,22 +1,63 @@
 /* CSS Variables */
 :root {
+  /* Colors */
   --primary-color: #7C3AED;
+  --primary-color-rgb: 124, 58, 237;
   --secondary-color: #EC4899;
+  --secondary-color-rgb: 236, 72, 153;
   --accent-color: #0EA5E9;
-  --text-color: #1F2937; /* Default text color for light mode */
-  --bg-color: #FFFFFF; /* Default background color for light mode */
+  --accent-color-rgb: 14, 165, 233;
+  
+  /* Light Mode Defaults */
+  --text-color: #1F2937;
+  --text-color-rgb: 31, 41, 55;
+  --bg-color: #FFFFFF;
+  --bg-color-rgb: 255, 255, 255;
   --bg-alt-color: #F9FAFB;
   --border-color: #E5E7EB;
+  
+  /* Layout */
+  --nav-height: 4rem;
+  --nav-padding: 1rem;
+  --container-padding: 2rem;
+  --section-spacing: 6rem;
+  
+  /* Typography */
   --font-family: 'Inter', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  
+  /* Effects */
   --transition-default: all 0.3s ease;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  /* Z-index layers */
+  --z-nav: 1000;
+  --z-modal: 1100;
+  --z-overlay: 1200;
+  --z-dropdown: 1300;
 }
 
 /* Dark Mode Colors */
 [data-theme="dark"] {
-  --text-color: #F9FAFB; /* Light text color for dark mode */
-  --bg-color: #121212; /* Dark background color */
-  --bg-alt-color: #1F2937; /* Alternate dark background */
-  --border-color: #374151; /* Border color for dark mode */
+  --text-color: #F9FAFB;
+  --text-color-rgb: 249, 250, 251;
+  --bg-color: #111827;
+  --bg-color-rgb: 17, 24, 39;
+  --bg-alt-color: #1F2937;
+  --border-color: #374151;
+  
+  /* Adjusted colors for dark mode */
+  --primary-color: #A78BFA;  /* Lighter purple for better contrast */
+  --secondary-color: #F472B6; /* Lighter pink */
+  --accent-color: #38BDF8;   /* Lighter blue */
+  
+  /* Dark mode shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
 
 /* Light Mode Colors */
